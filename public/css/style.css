@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lexend:wght@300;400;500;600;700;800&display=swap");
+
+body {
+  background-color: #f9f6f2;
+  font-family: "Lexend", sans-serif;
+}
+.header-bar {
+  background-color: #73522d;
+  width: 95%;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  margin: 10px;
+}
+
+.title {
+  color: #fff;
+  font-size: 30px;
+  font-family: Bebas Neue;
+  letter-spacing: 2px;
+  /* flex-grow: 1; */
+  flex-basis: 75%;
+}
+
+.page-title {
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+}
