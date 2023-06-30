@@ -1,25 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
+<?= $this->extend('layout/template'); ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+<?= $this->section('content'); ?>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-</head>
-
-<body>
-    <header>
-        //header bar page
-        <div class="header-bar">
-            //logo lakeside
-            <img src="/img/logo.png" alt="lakeside logo">
-            <h2 class="title">Lakeside</h2>
-            <h2 class="page-title">DASHBOARD</h2>
+<div class="container">
+    <h2 class="sub-title">INPUT</h2>
+    <div class="option">
+        <div class="opt-box">
+            <a href="" class="opt-link">
+                <img src="/img/debit-opt.png" alt="" class="img-opt">
+                <h2 class="box-title">DEBIT</h2>
+            </a>
         </div>
-    </header>
-</body>
+        <div class="opt-box">
+            <a href="" class="opt-link">
+                <img src="/img/kredit-opt.png" alt="" class="img-opt">
+                <h2 class="box-title">KREDIT</h2>
+            </a>
+        </div>
+    </div>
+</div>
 
-</html>
+<?= $this->endSection(); ?>
