@@ -32,7 +32,7 @@ header {
 
 .page-title {
   color: #fff;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 700;
   margin-right: 10px;
 }
@@ -45,18 +45,19 @@ header {
   padding: 10px;
   /* justify-content: space-around; */
   box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 0.25);
-  gap: 55px;
+  gap: 30px;
 }
 
 .nav-section {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  gap: 10px;
 }
 
 .navbar-title {
   color: #fff;
-  font-size: 13px;
+  font-size: 16px;
   font-weight: 700;
   margin-bottom: 8px;
 }
@@ -69,23 +70,22 @@ header {
 .navbar-button {
   background-color: #896a42;
   width: 100%;
-  height: 35px;
+  height: 45px;
   display: flex;
   align-items: center;
   border: none;
   padding-left: 20px;
-  margin-bottom: 5px;
 }
 
 .button-text {
   color: #fff;
-  font-size: 12px;
+  font-size: 16px;
   margin-left: 15px;
   line-height: 20px;
 }
 
 .logo {
-  width: 120px;
+  width: 200px;
 }
 
 #card-icon {
@@ -126,7 +126,7 @@ main {
 
 .opt-box {
   background-color: #faf5e4;
-  width: 400px;
+  width: 350px;
   box-shadow: 4px 4px 20px 0px rgba(160, 133, 91, 0.25);
 }
 
@@ -146,4 +146,82 @@ main {
 .box-title {
   color: #5c3c1d;
   font-size: 30px;
+}
+
+/* Input */
+.input-container {
+  display: flex;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-label {
+  color: #5c3c1d;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.input-sum,
+.input-date,
+#pj {
+  box-sizing: border-box;
+  height: 40px;
+  background-color: #f9f6f2;
+  border: 1px solid #a0855b;
+  box-shadow: -4px 4px 20px 0px rgba(115, 82, 45, 0.1);
+  padding: 5px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+#keterangan {
+  border: 1px solid #a0855b;
+  background: #f9f6f2;
+  box-shadow: -4px 4px 20px 0px rgba(115, 82, 45, 0.1);
+  padding: 10px;
+}
+
+option {
+  color: rgba(85, 85, 85, 0.33);
+  font-weight: 400;
+}
+
+.submit-button {
+  background: #73522d;
+  box-shadow: -4px 4px 20px 0px rgba(115, 82, 45, 0.1);
+  height: 40px;
+  border: none;
+  color: #fff;
+  font-family: "Lexend", sans-serif;
+  font-weight: 700;
+}
+
+.file-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  border: 1px dashed #a0855b;
+  background: #f9f6f2;
+  box-shadow: -4px 4px 20px 0px rgba(115, 82, 45, 0.1);
+  font-size: 11px;
+  gap: 5px;
+  color: rgba(160, 133, 91, 0.5);
+}
+
+.proof-input {
+  display: none;
 }
