@@ -180,6 +180,10 @@ main {
   padding: 5px;
 }
 
+#pj option[value="default"] {
+  color: rgba(85, 85, 85, 0.33);
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
@@ -194,7 +198,6 @@ input::-webkit-inner-spin-button {
 }
 
 option {
-  color: rgba(85, 85, 85, 0.33);
   font-weight: 400;
 }
 
@@ -214,7 +217,7 @@ option {
   justify-content: center;
   align-items: center;
   height: 80px;
-  border: 1px dashed #a0855b;
+  border: 2px dashed #a0855b;
   background: #f9f6f2;
   box-shadow: -4px 4px 20px 0px rgba(115, 82, 45, 0.1);
   font-size: 11px;
@@ -224,4 +227,53 @@ option {
 
 .proof-input {
   display: none;
+}
+
+/* History */
+.search-container {
+  box-sizing: border-box;
+  padding-left: 20px;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.search input[type="search"] {
+  box-sizing: border-box;
+  padding-left: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  height: 30px;
+  border: 2px solid #b4b4b4;
+  opacity: 0.5;
+  background-image: url("/img/Search.png");
+  background-repeat: no-repeat;
+  background-position: 5px;
+}
+
+.search input[type="search"]::placeholder {
+  font-family: "Lexend", sans-serif;
+  font-weight: 500;
+}
+
+.search input[type="date"] {
+  box-sizing: border-box;
+  height: 30px;
+  border: 2px solid #b4b4b4;
+  opacity: 0.5;
+  width: 162px;
+}
+
+.search-button {
+  box-sizing: border-box;
+  background: #896a42;
+  width: 100px;
+  border: none;
+  color: #ffffff;
+  font-family: "Lexend", sans-serif;
+  font-size: 16px;
+  height: 30px;
 }
