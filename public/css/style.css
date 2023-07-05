@@ -230,6 +230,12 @@ option {
 }
 
 /* History */
+.history-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
 .search-container {
   box-sizing: border-box;
   padding-left: 20px;
@@ -276,4 +282,38 @@ option {
   font-family: "Lexend", sans-serif;
   font-size: 16px;
   height: 30px;
+}
+
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.history {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.history thead th {
+  background-color: #73522d;
+  opacity: 0.800000011920929;
+  color: #fff;
+  font-weight: 400;
+  padding: 12px;
+  border: 1px solid #c5af85;
+}
+
+.history tbody th {
+  text-align: center;
+  font-weight: 400;
+}
+
+.history tbody tr th,
+.history tbody tr td {
+  border-bottom: 1px solid #c5af85;
+  padding: 4px;
+  color: #5c3c1d;
 }
