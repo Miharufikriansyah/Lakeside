@@ -33,6 +33,8 @@ $routes->get('/', 'Home::index');
 $routes->get('/Input/Debit', 'Input::Debit');
 $routes->get('/Input/Kredit', 'Input::Kredit');
 $routes->get('/History', 'History::index');
+$routes->get('/Total', 'Total::index');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing

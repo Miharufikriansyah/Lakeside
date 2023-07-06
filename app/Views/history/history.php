@@ -6,7 +6,12 @@
     <div class="search-container">
         <form action="" class="search">
             <input type="search" placeholder="Semua Transaksi">
-            <input type="date">
+            <input type="text" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+            <select name="" id="transaction">
+                <option value="default">Jenis Transaksi</option>
+                <option value="debit">Debit</option>
+                <option value="kredit">Kredit</option>
+            </select>
             <input type="submit" value="CARI" class="search-button">
         </form>
     </div>
@@ -15,9 +20,10 @@
             <thead>
                 <tr>
                     <th>No</th>
-                    <th>Keterangan</th>
+                    <th>Jumlah</th>
                     <th>Tanggal</th>
                     <th>Transaksi</th>
+                    <th>Keterangan</th>
                     <th>Penanggung Jawab</th>
                 </tr>
             </thead>

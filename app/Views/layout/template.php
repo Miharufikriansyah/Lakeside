@@ -24,6 +24,8 @@
             <h5 class="footer-title">Property of CAATIS-RA</h5>
         </div>
     </footer>
+    <!-- Custom JS -->
+    <script src="/js/date.js"></script>
 </body>
 
 </html>
