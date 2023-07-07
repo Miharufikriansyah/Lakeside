@@ -234,6 +234,7 @@ option {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  margin-bottom: 32px;
 }
 
 .search-container {
@@ -334,6 +335,7 @@ option {
 .history {
   border-collapse: collapse;
   width: 100%;
+  border-spacing: 20px;
 }
 
 .history thead th {
@@ -353,7 +355,7 @@ option {
 .history tbody tr th,
 .history tbody tr td {
   border-bottom: 1px solid #c5af85;
-  padding: 4px;
+  padding: 20px 4px;
   color: #5c3c1d;
 }
 

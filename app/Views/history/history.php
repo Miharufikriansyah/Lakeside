@@ -28,23 +28,16 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th>1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                </tr>
-                <tr>
-                    <th>2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                </tr>
-                <tr>
-                    <th>3</th>
-                    <td>Larry the Bird</td>
-                    <td>@twitter</td>
-                </tr>
+                <?php for ($i = 1; $i <= 7; $i++) { ?>
+                    <tr>
+                        <th><?= $i ?></th>
+                        <td>Rp.100.000</td>
+                        <td>30/6/2023</td>
+                        <td>Debit</td>
+                        <td>Kecap, Saus, Sosis, Susu, Biji Kopi</td>
+                        <td>Miharu Idhan Fikriansyah</td>
+                    </tr>
+                <?php }; ?>
             </tbody>
         </table>
     </div>
