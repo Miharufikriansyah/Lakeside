@@ -8,11 +8,14 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="/css/style.css">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/8bc6b90944.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <?= $this->include('layout/navbar'); ?>
     <header>
+        <div class="hamburger-menu"><i class="fa fa-bars"></i></div>
         <h2 class="page-title">DASHBOARD</h2>
     </header>
     <main>
@@ -26,6 +29,7 @@
     </footer>
     <!-- Custom JS -->
     <script src="/js/date.js"></script>
+    <script src="/js/hamburger.js"></script>
 </body>
 
 </html>

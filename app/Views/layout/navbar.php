@@ -1,4 +1,5 @@
 <div class="navbar">
+    <div class="hamburger-toggle"><i class="fa fa-bars"></i></div>
     <!-- logo lakeside -->
     <img class="logo" src="/img/logo.png" alt="lakeside logo">
     <nav>

@@ -19,7 +19,7 @@
         </select>
         <input type="submit" value="INPUT DATA" class="submit-button">
     </form>
-    <img src="/img/debit-sketch.png" alt="Sketch Debit">
+    <img src="/img/debit-sketch.png" alt="Sketch Debit" class="sketch-img">
 </div>
 
 

@@ -25,7 +25,7 @@
         </label>
         <input type="submit" value="INPUT DATA" class="submit-button">
     </form>
-    <img src="/img/kredit-sketch.png" alt="Sketch Debit">
+    <img src="/img/kredit-sketch.png" alt="Sketch Debit" class="sketch-img">
 </div>
 
 
