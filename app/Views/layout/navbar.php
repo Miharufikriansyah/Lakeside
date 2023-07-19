@@ -23,13 +23,7 @@
             <a href="" class="nav-link">
                 <button class="navbar-button">
                     <img src="/img/card-icon.png" alt="card icon" id="card-icon">
-                    <p class="button-text">Debit</p>
-                </button>
-            </a>
-            <a href="" class="nav-link">
-                <button class="navbar-button">
-                    <img src="/img/card-icon.png" alt="card icon" id="card-icon">
-                    <p class="button-text">Kredit</p>
+                    <p class="button-text">Lihat History</p>
                 </button>
             </a>
         </div>
@@ -38,7 +32,7 @@
             <a href="" class="nav-link">
                 <button class="navbar-button">
                     <img src="/img/card-icon.png" alt="card icon" id="card-icon">
-                    <p class="button-text">Semua Transaksi</p>
+                    <p class="button-text last">Semua Transaksi</p>
                 </button>
             </a>
         </div>

@@ -89,6 +89,10 @@ nav {
   line-height: 20px;
 }
 
+.last {
+  margin-left: 10px;
+}
+
 .logo {
   width: 100%;
 }
@@ -100,6 +104,7 @@ nav {
 main {
   padding: 10px;
   height: 100%;
+  margin-bottom: 20px;
 }
 
 .footer {
@@ -128,7 +133,7 @@ main {
   cursor: pointer;
 }
 
-/* Non-template */
+/* Dashboard*/
 .img-opt {
   width: 250px;
   height: 250px;
@@ -187,7 +192,6 @@ main {
 }
 
 .input-sum,
-.input-date,
 #pj {
   box-sizing: border-box;
   height: 40px;
@@ -195,6 +199,38 @@ main {
   border: 1px solid #a0855b;
   box-shadow: -4px 4px 20px 0px rgba(115, 82, 45, 0.1);
   padding: 5px;
+}
+
+.input-date[type="text"] {
+  background-image: url("/img/Calendar.png");
+  background-repeat: no-repeat;
+  box-sizing: border-box;
+  height: 40px;
+  padding: 8px 4px 4px 24px;
+  background-color: #f9f6f2;
+  border: 1px solid #a0855b;
+  box-shadow: -4px 4px 20px 0px rgba(115, 82, 45, 0.1);
+  background-position-y: center;
+}
+
+.input-date[type="date"] {
+  box-sizing: border-box;
+  height: 40px;
+  background-color: #f9f6f2;
+  border: 1px solid #a0855b;
+  box-shadow: -4px 4px 20px 0px rgba(115, 82, 45, 0.1);
+}
+
+.input-date::-webkit-calendar-picker-indicator {
+  background-image: url("/img/Calendar.png");
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background-repeat: no-repeat;
+  width: 23.5px;
+  height: 23.5px;
+  position: relative;
+  left: -90%;
 }
 
 #pj option[value="default"] {
@@ -261,6 +297,7 @@ option {
 .search-container {
   box-sizing: border-box;
   padding-left: 20px;
+  display: flex;
 }
 
 .search {
@@ -293,7 +330,7 @@ option {
   height: 30px;
   border: 2px solid #b4b4b4;
   opacity: 0.5;
-  width: 188px;
+  width: 193px;
   padding: 4px;
   font-weight: 500;
   font-family: "Lexend", sans-serif;
@@ -311,11 +348,13 @@ option {
   position: relative;
   left: -88%;
 }
-.search ::-webkit-datetime-edit-fields-wrapper {
+.search ::-webkit-datetime-edit-fields-wrapper,
+.input-date::-webkit-datetime-edit-fields-wrapper {
   position: relative;
   left: 6%;
 }
-.search input::-webkit-datetime-edit {
+.search input::-webkit-datetime-edit,
+.input-date::-webkit-datetime-edit {
   position: relative;
   left: 6%;
 }
@@ -351,6 +390,7 @@ option {
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
+  overflow-x: auto;
 }
 
 .history {
@@ -381,14 +421,21 @@ option {
 }
 
 /* total */
-.cashflow-container,
+.cashflow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  gap: 10px;
+}
+
 .neraca {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 0 20px;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .cashflow {
@@ -485,7 +532,7 @@ option {
     transform: translateX(0px);
   }
 }
-
+/* Animation Hamburger Menu */
 @keyframes slideMenu {
   0% {
     opacity: 0;
@@ -508,15 +555,15 @@ option {
 /* Responsive Breakpoint */
 
 /* Tablet */
-@media (max-width: 820px) {
+@media (max-width: 960px) {
   body {
     grid-template-columns: 0.2fr 1fr;
     grid-template-rows: 0.2fr 1fr auto;
     height: 100%;
   }
 
-  .navbar {
-    visibility: visible;
+  main {
+    height: fit-content;
   }
 
   .opt-box {
@@ -532,10 +579,39 @@ option {
     font-size: 12px;
     text-align: start;
   }
+
+  /* Input */
+  .input-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .input-sum,
+  #date.input-date,
+  #pj,
+  .sketch-img {
+    width: 383px;
+  }
+
+  /* history */
+  .search {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .search input[type="search"],
+  #date {
+    width: 256px;
+  }
+
+  /* total */
+  .cashflow-container {
+    flex-direction: column;
+  }
 }
 
 /* Mobile */
 @media (max-width: 620px) {
+  /* Layout */
   body {
     display: flex;
     flex-direction: column;
@@ -560,6 +636,7 @@ option {
     font-size: 20px;
   }
 
+  /* Hamburger Menu */
   .hamburger-menu {
     display: block;
     z-index: 1;
@@ -615,5 +692,42 @@ option {
 
   #card-icon {
     width: 12px;
+  }
+
+  /* input */
+  .input-sum,
+  #date.input-date,
+  #pj,
+  .sketch-img {
+    width: 307px;
+  }
+
+  /* History */
+  .table-container {
+    justify-content: flex-start;
+  }
+}
+
+/* Mobile S */
+@media (max-width: 360px) {
+  .opt-box {
+    width: 150px;
+  }
+
+  .img-opt {
+    width: 125px;
+    height: 115px;
+  }
+
+  .box-title {
+    font-size: 25px;
+  }
+
+  /* input */
+  .input-sum,
+  #date.input-date,
+  #pj,
+  .sketch-img {
+    width: 290px;
   }
 }

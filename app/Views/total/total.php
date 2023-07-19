@@ -8,6 +8,28 @@
         <thead>
             <tr>
                 <th>Debit</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="data">
+                    <p class="amount">Rp.10.000</p>
+                    <p class="desc">Sirup ABC</p>
+                    <p class="data-date">05/01/2023</p>
+                </td>
+            </tr>
+            <tr>
+                <td class="data">
+                    <p class="amount">Rp.10.000</p>
+                    <p class="desc">Sirup ABC</p>
+                    <p class="data-date">05/01/2023</p>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="cashflow">
+        <thead>
+            <tr>
                 <th>Kredit</th>
             </tr>
         </thead>
@@ -18,18 +40,8 @@
                     <p class="desc">Sirup ABC</p>
                     <p class="data-date">05/01/2023</p>
                 </td>
-                <td class="data">
-                    <p class="amount">Rp.10.000</p>
-                    <p class="desc">Sirup ABC</p>
-                    <p class="data-date">05/01/2023</p>
-                </td>
             </tr>
             <tr>
-                <td class="data">
-                    <p class="amount">Rp.10.000</p>
-                    <p class="desc">Sirup ABC</p>
-                    <p class="data-date">05/01/2023</p>
-                </td>
                 <td class="data">
                     <p class="amount">Rp.10.000</p>
                     <p class="desc">Sirup ABC</p>
