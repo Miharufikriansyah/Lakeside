@@ -15,7 +15,7 @@ body {
     "navbar main"
     "footer footer";
   grid-template-columns: 0.4fr 2.2fr;
-  grid-template-rows: 0.2fr 1.5fr auto;
+  grid-template-rows: 0.2fr 1.8fr auto;
 }
 
 a {
@@ -80,6 +80,7 @@ nav {
   align-items: center;
   border: none;
   padding-left: 20px;
+  cursor: pointer;
 }
 
 .button-text {
@@ -177,6 +178,7 @@ main {
   justify-content: space-around;
   align-items: center;
   gap: 20px;
+  margin-bottom: 10px;
 }
 
 .form-container {
@@ -262,6 +264,8 @@ option {
   color: #fff;
   font-family: "Lexend", sans-serif;
   font-weight: 700;
+  cursor: pointer;
+  transition: 500ms linear;
 }
 
 .file-container {
@@ -382,6 +386,13 @@ option {
   font-family: "Lexend", sans-serif;
   font-size: 16px;
   height: 30px;
+  cursor: pointer;
+  transition: 500ms linear;
+}
+
+.search-button:hover,
+.submit-button:hover {
+  background-color: #ba905a;
 }
 
 .table-container {
@@ -615,6 +626,7 @@ option {
   body {
     display: flex;
     flex-direction: column;
+    /* overflow: hidden; */
   }
 
   header {
@@ -653,10 +665,13 @@ option {
   .navbar {
     gap: 10px;
     display: none;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
     position: fixed;
     z-index: 999;
-    width: 100%;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
   }
 
   nav {

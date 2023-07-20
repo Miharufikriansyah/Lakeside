@@ -6,8 +6,10 @@ const hamClose = document.querySelector('.hamburger-toggle');
 
 hamOpen.addEventListener('click',function () {
     navbar.style.display = "flex";
+    body.style.overflow = "hidden";
 })
 
 hamClose.addEventListener('click', function () {
     navbar.removeAttribute('style');
+    body.removeAttribute('style');
 })
