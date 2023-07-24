@@ -277,9 +277,13 @@ option {
   border: 2px dashed #a0855b;
   background: #f9f6f2;
   box-shadow: -4px 4px 20px 0px rgba(115, 82, 45, 0.1);
-  font-size: 11px;
   gap: 5px;
+}
+
+.label-text {
+  font-size: 11px;
   color: rgba(160, 133, 91, 0.5);
+  margin: 0;
 }
 
 .proof-input {
@@ -665,7 +669,6 @@ option {
   .navbar {
     gap: 10px;
     display: none;
-    /* overflow-y: scroll; */
     position: fixed;
     z-index: 999;
     top: 0;

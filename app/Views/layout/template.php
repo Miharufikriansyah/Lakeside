@@ -30,6 +30,7 @@
     <!-- Custom JS -->
     <script src="/js/date.js"></script>
     <script src="/js/hamburger.js"></script>
+    <script src="/js/input.js"></script>
 </body>
 
 </html>

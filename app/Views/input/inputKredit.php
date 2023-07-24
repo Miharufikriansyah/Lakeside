@@ -20,8 +20,8 @@
         <label class="form-label">Upload Bukti</label>
         <label for="proof" class="file-container">
             <input type="file" class="proof-input" id="proof">
-            <img src="/img/upload-icon.png" alt="Upload Icon">
-            Upload Your Image
+            <img src="/img/upload-icon.png" alt="Upload Icon" class="up-icon">
+            <p class="label-text">Upload Your Image</p>
         </label>
         <input type="submit" value="INPUT DATA" class="submit-button">
     </form>
