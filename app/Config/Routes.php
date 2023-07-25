@@ -32,8 +32,11 @@ $routes->set404Override();
 $routes->get('/', 'Home::index');
 $routes->get('/Input/Debit', 'Input::Debit');
 $routes->get('/Input/Kredit', 'Input::Kredit');
-$routes->get('/History', 'History::index');
+$routes->get('/History/debit', 'History::Hdebit');
+$routes->get('/History/kredit', 'History::Hkredit');
 $routes->get('/Total', 'Total::index');
+$routes->post('/Input/SaveDebit', 'Input::SaveDebit');
+$routes->post('/Input/SaveKredit', 'Input::SaveKredit');
 
 /*
  * --------------------------------------------------------------------
