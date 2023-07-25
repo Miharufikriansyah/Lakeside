@@ -15,7 +15,7 @@ body {
     "navbar main"
     "footer footer";
   grid-template-columns: 0.4fr 2.2fr;
-  grid-template-rows: 0.2fr 1.8fr auto;
+  grid-template-rows: 0.1fr 1.8fr auto;
 }
 
 a {
