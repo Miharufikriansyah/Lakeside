@@ -5,9 +5,15 @@ Controller Input buat handle hal-hal yang berkaitan dengan input
 
 namespace App\Controllers;
 
+use App\Models\DebitModel;
+use App\Models\KreditModel;
+
 class History extends BaseController
 {
-    public function Debit()
+    protected $debitModel;
+    protected $kreditModel;
+
+    public function index()
     {
         return view('history/historyDebit');
     }
@@ -15,5 +21,19 @@ class History extends BaseController
     public function Kredit()
     {
         return view('history/historyKredit');
+    }
+
+    public function Hdebit()
+    {
+        $debitModel = new DebitModel();
+        $debit = $debitModel->getDebit();
+        return view('/history/history', ['data' => $debit]);
+    }
+
+    public function Hkredit()
+    {
+        $kreditModel = new KreditModel();
+        $kredit = $kreditModel->getkredit();
+        return view('/history/history', ['data' => $kredit]);
     }
 }

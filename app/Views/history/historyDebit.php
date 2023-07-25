@@ -22,15 +22,19 @@
                 </tr>
             </thead>
             <tbody>
-                <?php for ($i = 1; $i <= 7; $i++) { ?>
-                    <tr>
-                        <th><?= $i ?></th>
-                        <td>Rp.100.000</td>
-                        <td>30/6/2023</td>
-                        <td>Kecap, Saus, Sosis, Susu, Biji Kopi</td>
-                        <td>Miharu Idhan Fikriansyah</td>
-                    </tr>
-                <?php }; ?>
+
+
+                <?php foreach ($data as $d) : ?>
+                    <?php for ($i = 1; $i <= 7; $i++) { ?>
+                        <tr>
+                            <th><?= $i ?></th>
+                            <td><?= $d['Jumlah'] ?></td>
+                            <td><?= $d['Tanggal'] ?></td>
+                            <td><?= $d['Keterangan'] ?></td>
+                            <td><?= $d['PJ'] ?></td>
+                        </tr>
+                    <?php }; ?>
+                <?php endforeach; ?>
             </tbody>
         </table>
     </div>
