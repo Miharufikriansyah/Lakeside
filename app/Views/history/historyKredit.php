@@ -7,11 +7,6 @@
         <form action="" class="search">
             <input type="search" placeholder="Semua Transaksi">
             <input type="text" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
-            <select name="" id="transaction">
-                <option value="default">Jenis Transaksi</option>
-                <option value="debit">Debit</option>
-                <option value="kredit">Kredit</option>
-            </select>
             <input type="submit" value="CARI" class="search-button">
         </form>
     </div>
@@ -22,9 +17,9 @@
                     <th>No</th>
                     <th>Jumlah</th>
                     <th>Tanggal</th>
-                    <th>Transaksi</th>
                     <th>Keterangan</th>
                     <th>Penanggung Jawab</th>
+                    <th>Bukti</th>
                 </tr>
             </thead>
             <tbody>
@@ -33,15 +28,13 @@
                         <th><?= $i ?></th>
                         <td>Rp.100.000</td>
                         <td>30/6/2023</td>
-                        <td>Debit</td>
                         <td>Kecap, Saus, Sosis, Susu, Biji Kopi</td>
                         <td>Miharu Idhan Fikriansyah</td>
+                        <td class="file-img"><img class="proof-icon" src="/img/Document.png" alt="doc-icon"></td>
                     </tr>
                 <?php }; ?>
             </tbody>
         </table>
     </div>
 </div>
-
-
 <?= $this->endSection(); ?>

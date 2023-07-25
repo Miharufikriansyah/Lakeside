@@ -27,10 +27,14 @@
             <h5 class="footer-title">Property of CAATIS-RA</h5>
         </div>
     </footer>
+    <div class="img-modal">
+        <img class="proof-img" src="/img/debit-opt.png" alt="">
+    </div>
     <!-- Custom JS -->
     <script src="/js/date.js"></script>
     <script src="/js/hamburger.js"></script>
     <script src="/js/input.js"></script>
+    <script src="/js/proof.js"></script>
 </body>
 
 </html>

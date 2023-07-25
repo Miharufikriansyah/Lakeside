@@ -7,8 +7,13 @@ namespace App\Controllers;
 
 class History extends BaseController
 {
-    public function index()
+    public function Debit()
     {
-        return view('history/history');
+        return view('history/historyDebit');
+    }
+
+    public function Kredit()
+    {
+        return view('history/historyKredit');
     }
 }
