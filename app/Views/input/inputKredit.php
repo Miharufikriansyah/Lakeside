@@ -4,9 +4,9 @@
 
 <h2 class="sub-title">INPUT KREDIT</h2>
 <div class="input-container">
-    <form action="" class="form-container">
+    <form action="SaveKredit" method="post" class="form-container">
         <label class="form-label">Jumlah</label>
-        <input type="number" class="input-sum" placeholder="10.000">
+        <input type="number" class="input-sum" placeholder="10.000" id="Jumlah">
         <label class="form-label">Tanggal</label>
         <input class="input-date" type="text" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
         <label class="form-label">Keterangan</label>
