@@ -22,7 +22,7 @@
         </div>
         <p class="navbar-title">History</p>
         <div class="nav-section">
-            <a href="/History/debit" class="nav-link">
+            <a href="/History/Debit" class="nav-link">
                 <button class="navbar-button">
                     <img src="/img/card-icon.png" alt="card icon" id="card-icon">
                     <p class="button-text">Debit</p>

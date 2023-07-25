@@ -13,27 +13,18 @@ class History extends BaseController
     protected $debitModel;
     protected $kreditModel;
 
-    public function index()
+
+    public function Debit()
     {
-        return view('history/historyDebit');
+        $debitModel = new DebitModel();
+        $debit = $debitModel->getDebit();
+        return view('/history/historyDebit', ['data' => $debit]);
     }
 
     public function Kredit()
     {
-        return view('history/historyKredit');
-    }
-
-    public function Hdebit()
-    {
-        $debitModel = new DebitModel();
-        $debit = $debitModel->getDebit();
-        return view('/history/history', ['data' => $debit]);
-    }
-
-    public function Hkredit()
-    {
         $kreditModel = new KreditModel();
         $kredit = $kreditModel->getkredit();
-        return view('/history/history', ['data' => $kredit]);
+        return view('/history/historyKredit', ['data' => $kredit]);
     }
 }

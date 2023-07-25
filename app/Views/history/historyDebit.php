@@ -23,7 +23,6 @@
             </thead>
             <tbody>
 
-
                 <?php foreach ($data as $d) : ?>
                     <?php for ($i = 1; $i <= 7; $i++) { ?>
                         <tr>
