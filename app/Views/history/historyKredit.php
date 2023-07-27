@@ -41,8 +41,10 @@
     </div>
 </main>
 <?= $this->include('layout/footer'); ?>
-<div id="img-modal" onclick="closeModal()">
-    <img class="proof-img" src="/img/debit-opt.png" alt="">
-</div>
+<?php foreach ($kredit as $k) : ?>
+    <div id="img-modal" onclick="closeModal()">
+        <img class="proof-img" src="/img/<?= $k['Bukti'] ?>" alt="">
+    </div>
+<?php endforeach ?>
 <script src="/js/proof.js"></script>
 <?= $this->endSection(); ?>
