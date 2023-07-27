@@ -14,6 +14,12 @@ class Input extends BaseController
     protected $debitModel;
     protected $kreditModel;
 
+    public function __construct()
+    {
+        $this->debitModel = new DebitModel();
+        $this->kreditModel = new KreditModel();
+    }
+
     public function Debit()
     {
         return view('input/inputDebit');
@@ -21,12 +27,11 @@ class Input extends BaseController
 
     public function SaveDebit()
     {
-        $debitModel = new DebitModel();
-        $debitModel->save([
+        $this->debitModel->save([
             'Jumlah' => $this->request->getVar('Jumlah') ?? 0,
             'Tanggal' => $this->request->getVar('date'),
-            'Keterangan' => $this->request->getVar('Keterangan') ?? '',
-            'PJ' => $this->request->getVar('pj'),
+            'Keterangan' => $this->request->getVar('keterangan') ?? '',
+            'PJ' => $this->request->getVar('PJ'),
         ]);
         Session()->setFlashdata('Pesan', 'Sukses');
         return redirect()->to('Input/Debit');
@@ -39,13 +44,12 @@ class Input extends BaseController
 
     public function SaveKredit()
     {
-        $kreditModel = new KreditModel();
-        $kreditModel->save([
-            'Jumlah' => $this->request->getVar('Jumlah'),
+        $this->kreditModel->save([
+            'Jumlah' => $this->request->getVar('Jumlah') ?? 0,
             'Tanggal' => $this->request->getVar('date'),
-            'Keterangan' => $this->request->getVar('Keterangan'),
-            'Penanggung Jawab' => $this->request->getVar('pj'),
-            'Bukti' => $this->request->getVar('proof'),
+            'Keterangan' => $this->request->getVar('keterangan') ?? '',
+            'Penanggung Jawab' => $this->request->getVar('PJ'),
+            'Bukti' => $this->request->getVar('bukti'),
         ]);
         Session()->setFlashdata('Pesan', 'Sukses');
         return redirect()->to('Input/Kredit');

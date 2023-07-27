@@ -31,7 +31,7 @@
                             <td><?= $k['Jumlah'] ?></td>
                             <td><?= $k['Tanggal'] ?></td>
                             <td><?= $k['Keterangan'] ?></td>
-                            <td><?= $k['Penanggung Jawab'] ?></td>
+                            <td><?= $k['PJ'] ?></td>
                             <td class="file-img"><img class="proof-icon" src="/img/Document.png" alt="doc-icon" onclick="showModal()"></td>
                         </tr>
                     <?php endforeach; ?>
