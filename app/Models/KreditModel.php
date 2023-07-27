@@ -15,4 +15,11 @@ class KreditModel extends Model
     {
         return $this->findAll();
     }
+    public function saveBukti($data){
+        $query = $this->db->table($this->table)->insert($data);
+        return $query;
+    }
+    public function totalKredit(){
+        
+    }
 }
