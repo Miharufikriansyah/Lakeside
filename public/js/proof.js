@@ -1,11 +1,15 @@
-const file = document.querySelector('.proof-icon');
-const modal = document.querySelector('.img-modal');
-const img = document.querySelector('.proof-img');
+let file = document.getElementsByClassName('proof-icon');
+let modal = document.getElementById('img-modal');
+let img = document.getElementsByClassName('proof-img');
 
-file.addEventListener('click', function(){
+// file.addEventListener('click', showModal)
+
+// modal.addEventListener('click', closeModal)
+
+function showModal() {
     modal.style.display = "flex";
-})
+}
 
-modal.addEventListener('click', function(){
+function closeModal() {
     modal.removeAttribute('style');
-})
+}

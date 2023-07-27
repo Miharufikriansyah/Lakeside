@@ -16,15 +16,27 @@ class History extends BaseController
 
     public function Debit()
     {
+        $currentPage = $this->request->getVar('page_debit') ? $this->request->getVar('page_debit') : 1;
         $debitModel = new DebitModel();
-        $debit = $debitModel->getDebit();
-        return view('/history/historyDebit', ['data' => $debit]);
+        // $debit = $debitModel->getDebit();
+        $data = [
+            'debit' => $debitModel->paginate(7, 'debit'),
+            'pager' => $debitModel->pager,
+            'currentPage' => $currentPage
+        ];
+        // return view('/history/historyDebit', ['data' => $debit]);
+        return view('/history/historyDebit', $data);
     }
 
     public function Kredit()
     {
+        $currentPage = $this->request->getVar('page_debit') ? $this->request->getVar('page_debit') : 1;
         $kreditModel = new KreditModel();
-        $kredit = $kreditModel->getkredit();
-        return view('/history/historyKredit', ['data' => $kredit]);
+        $data = [
+            'kredit' => $kreditModel->paginate(7, 'kredit'),
+            'pager' => $kreditModel->pager,
+            'currentPage' => $currentPage
+        ];
+        return view('/history/historyKredit', $data);
     }
 }

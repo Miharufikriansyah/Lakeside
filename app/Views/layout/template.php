@@ -18,23 +18,8 @@
         <div class="hamburger-menu"><i class="fa fa-bars"></i></div>
         <h2 class="page-title">DASHBOARD</h2>
     </header>
-    <main>
-        <?= $this->renderSection('content') ?>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-bar">
-            <h5 class="footer-title">Property of CAATIS-RA</h5>
-        </div>
-    </footer>
-    <div class="img-modal">
-        <img class="proof-img" src="/img/debit-opt.png" alt="">
-    </div>
+    <?= $this->renderSection('content') ?>
     <!-- Custom JS -->
-    <script src="/js/date.js"></script>
-    <script src="/js/hamburger.js"></script>
-    <script src="/js/input.js"></script>
-    <script src="/js/proof.js"></script>
 </body>
 
 </html>

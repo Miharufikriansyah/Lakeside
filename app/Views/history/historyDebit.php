@@ -1,43 +1,45 @@
 <?= $this->extend('layout/template'); ?>
 
 <?= $this->section('content'); ?>
-<h2 class="sub-title">History</h2>
-<div class="history-container">
-    <div class="search-container">
-        <form action="" class="search">
-            <input type="search" placeholder="Semua Transaksi">
-            <input type="text" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
-            <input type="submit" value="CARI" class="search-button">
-        </form>
-    </div>
-    <div class="table-container">
-        <table class="history">
-            <thead>
-                <tr>
-                    <th>No</th>
-                    <th>Jumlah</th>
-                    <th>Tanggal</th>
-                    <th>Keterangan</th>
-                    <th>Penanggung Jawab</th>
-                </tr>
-            </thead>
-            <tbody>
-
-                <?php foreach ($data as $d) : ?>
-                    <?php for ($i = 1; $i <= 7; $i++) { ?>
+<main>
+    <h2 class="sub-title">History</h2>
+    <div class="history-container">
+        <div class="search-container">
+            <form action="" class="search">
+                <input type="search" placeholder="Semua Transaksi">
+                <input type="text" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                <input type="submit" value="CARI" class="search-button">
+            </form>
+        </div>
+        <div class="table-container">
+            <table class="history">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Jumlah</th>
+                        <th>Tanggal</th>
+                        <th>Keterangan</th>
+                        <th>Penanggung Jawab</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php $i = 1  + (6 * ($currentPage - 1)) ?>
+                    <?php foreach ($debit as $d) : ?>
                         <tr>
-                            <th><?= $i ?></th>
+                            <th><?= $i++ ?></th>
                             <td><?= $d['Jumlah'] ?></td>
                             <td><?= $d['Tanggal'] ?></td>
                             <td><?= $d['Keterangan'] ?></td>
                             <td><?= $d['PJ'] ?></td>
                         </tr>
-                    <?php }; ?>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                    <?php endforeach; ?>
+                </tbody>
+            </table>
+        </div>
+        <div class="page-container">
+            <?= $pager->links('debit', 'history_pagination') ?>
+        </div>
     </div>
-</div>
-
-
+</main>
+<?= $this->include('layout/footer'); ?>
 <?= $this->endSection(); ?>
