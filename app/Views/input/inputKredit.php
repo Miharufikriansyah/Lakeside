@@ -4,11 +4,11 @@
 <main>
     <h2 class="sub-title">INPUT KREDIT</h2>
     <div class="input-container">
-        <form action="SaveKredit" method="post" class="form-container">
+        <form action="SaveKredit" method="POST" class="form-container">
             <label class="form-label">Jumlah</label>
-            <input type="number" class="input-sum" placeholder="10.000" id="Jumlah">
+            <input name="Jumlah" type="number" class="input-sum" placeholder="10.000" id="Jumlah">
             <label class="form-label">Tanggal</label>
-            <input class="input-date" type="text" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+            <input name="date" class="input-date" type="text" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
             <label class="form-label">Keterangan</label>
             <textarea name="keterangan" id="keterangan" cols="30" rows="5" placeholder="Masukkan Nama Pesanan"></textarea>
             <label class="form-label">Penanggung Jawab</label>
@@ -19,7 +19,7 @@
             </select>
             <label class="form-label">Upload Bukti</label>
             <label for="proof" class="file-container">
-                <input type="file" class="proof-input" id="proof">
+                <input name="bukti" type="file" class="proof-input" id="proof">
                 <img src="/img/upload-icon.png" alt="Upload Icon" class="up-icon">
                 <p class="label-text">Upload Your Image</p>
             </label>
