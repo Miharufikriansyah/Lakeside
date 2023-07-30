@@ -90,23 +90,41 @@ class Input extends BaseController
                 'errors' => 'PJ Tidak Boleh kosong',
             ],
             'bukti' => [
-                'rules' => 'required|uploaded[file_upload]|mime_in[file_upload,image/jpg,image/jpeg,image/gif,image/png]',
-                'errors' => 'Gambar Tidak Boleh kosong',
+                'rules' => 'required|uploaded[bukti]|mime_in[bukti,image/jpg,image/jpeg,image/gif,image/png]',
+                'errors' => [
+                    'required' => 'Gambar Tidak Boleh kosong',
+                    'uploaded' => 'Gagal mengunggah gambar',
+                    'mime_in' => 'Format gambar tidak valid (jpg, jpeg, gif, png)'
+                ],
             ],
         ])) {
             $validation = \Config\Services::validation();
             return redirect()->to('Input/Kredit')->withInput()->with('validation', $validation);
         }
 
-        $this->kreditModel->save([
-            'Jumlah' => $this->request->getVar('Jumlah') ?? 0,
-            'Tanggal' => $this->request->getVar('date'),
-            'Keterangan' => $this->request->getVar('keterangan') ?? '',
-            'Penanggung Jawab' => $this->request->getVar('PJ'),
-            'Bukti' => $this->request->getFile('bukti'),
-        ]);
+        // Upload images
+        $filesbukti = $this->request->getFile('bukti');
+        if ($filesbukti->isValid() && !$filesbukti->hasMoved()) {
+            // Pindahkan file ke direktori tujuan (misalnya 'img') dengan nama acak
+            $filesbukti->move('img', $filesbukti->getRandomName());
 
-        Session()->setFlashdata('Pesan', 'Sukses');
-        return redirect()->to('Input/Kredit');
+            // Ambil nama file acak yang dihasilkan
+            $namebukti = $filesbukti->getName();
+
+            // Upload to database
+            $this->kreditModel->save([
+                'Jumlah' => $this->request->getVar('Jumlah') ?? 0,
+                'Tanggal' => $this->request->getVar('date'),
+                'Keterangan' => $this->request->getVar('keterangan') ?? '',
+                'Penanggung Jawab' => $this->request->getVar('PJ'),
+                'Bukti' => $namebukti,
+            ]);
+
+            Session()->setFlashdata('Pesan', 'Sukses');
+            return redirect()->to('Input/Kredit');
+        } else {
+            Session()->setFlashdata('Pesan', 'Gagal mengunggah gambar');
+            return redirect()->to('Input/Kredit')->withInput();
+        }
     }
 }
