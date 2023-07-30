@@ -15,4 +15,19 @@ class DebitModel extends Model
     {
         return $this->findAll();
     }
+
+    public function searchdebit($keyword)
+    {
+        $builder = $this->table('kredit');
+        $builder->like('Tanggal', $keyword);
+        return $builder;
+    }
+
+    public function totalDebit()
+    {
+        $builder = $this->table('kredit');
+        $builder->selectSum('Jumlah');
+        $totaldebit = $builder->get();
+        return $totaldebit;
+    }
 }

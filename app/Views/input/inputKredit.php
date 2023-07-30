@@ -4,7 +4,7 @@
 <main>
     <h2 class="sub-title">INPUT KREDIT</h2>
     <div class="input-container">
-        <form action="SaveKredit" method="POST" class="form-container">
+        <form action="SaveKredit" method="post" class="form-container" enctype="multipart/form-data">
             <label class="form-label">Jumlah</label>
             <input name="Jumlah" type="number" class="input-sum" placeholder="10.000" id="Jumlah">
             <label class="form-label">Tanggal</label>
@@ -19,7 +19,7 @@
             </select>
             <label class="form-label">Upload Bukti</label>
             <label for="proof" class="file-container">
-                <input name="bukti" type="file" class="proof-input" id="proof">
+                <input type="file" name="bukti" class="proof-input" id="proof">
                 <img src="/img/upload-icon.png" alt="Upload Icon" class="up-icon">
                 <p class="label-text">Upload Your Image</p>
             </label>
