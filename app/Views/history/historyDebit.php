@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $i = 1  + (6 * ($currentPage - 1)) ?>
+                    <?php $i = 1  + (7 * ($currentPage - 1)) ?>
                     <?php foreach ($debit as $d) : ?>
                         <tr>
                             <th><?= $i++ ?></th>
