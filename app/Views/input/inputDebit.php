@@ -23,5 +23,14 @@
     </div>
 </main>
 <?= $this->include('layout/footer'); ?>
+<?php if (session()->getFlashdata('Pesan')) : ?>
+    <div class="alert-modal" onclick="closeAlert()" style="display: flex;">
+        <div class="alert-box">
+            <img class="check" src="/img/check.png" alt="alert">
+            <p><?= session()->getFlashdata('Pesan') ?></p>
+        </div>
+    </div>
+<?php endif ?>
 <script src="/js/date.js"></script>
+<script src="/js/success.js"></script>
 <?= $this->endSection(); ?>

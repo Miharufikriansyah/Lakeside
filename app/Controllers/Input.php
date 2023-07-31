@@ -55,10 +55,10 @@ class Input extends BaseController
         $this->debitModel->save([
             'Jumlah' => $this->request->getVar('Jumlah'),
             'Tanggal' => $this->request->getVar('date'),
-            'Keterangan' => $this->request->getVar('keterangan'),
+            'Keterangan' => $this->request->getVar('keterangan') ?? '',
             'PJ' => $this->request->getVar('PJ'),
         ]);
-        Session()->setFlashdata('Pesan', 'Sukses');
+        Session()->setFlashdata('Pesan', 'Data Telah Diinput');
         return redirect()->to('Input/Debit');
     }
 
@@ -120,7 +120,7 @@ class Input extends BaseController
                 'Bukti' => $namebukti,
             ]);
 
-            Session()->setFlashdata('Pesan', 'Sukses');
+            Session()->setFlashdata('Pesan', 'Data Telah Diinput');
             return redirect()->to('Input/Kredit');
         } else {
             Session()->setFlashdata('Pesan', 'Gagal mengunggah gambar');
