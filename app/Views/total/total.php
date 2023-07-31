@@ -20,13 +20,6 @@
                             <p class="data-date"><?= $d['Tanggal'] ?></p>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="data">
-                            <p class="amount">Rp.10.000</p>
-                            <p class="desc">Sirup ABC</p>
-                            <p class="data-date">05/01/2023</p>
-                        </td>
-                    </tr>
                 <?php endforeach; ?>
             </tbody>
         </table>
