@@ -441,7 +441,7 @@ option {
   color: #5c3c1d;
 }
 
-#img-modal {
+.img-modal {
   display: none;
   justify-content: center;
   align-items: center;
@@ -505,7 +505,7 @@ option {
 .cashflow-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   padding: 0 20px;
   gap: 10px;
 }
@@ -522,6 +522,7 @@ option {
 .cashflow {
   width: 100%;
   border-spacing: 20px 2px;
+  height: 100%;
 }
 
 .cashflow thead th {

@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php $i = 1  + (6 * ($currentPage - 1)) ?>
+                    <?php $i = 1  + (7 * ($currentPage - 1)) ?>
                     <?php foreach ($kredit as $k) : ?>
                         <tr>
                             <th><?= $i++ ?></th>
@@ -32,7 +32,7 @@
                             <td><?= $k['Tanggal'] ?></td>
                             <td><?= $k['Keterangan'] ?></td>
                             <td><?= $k['PJ'] ?></td>
-                            <td class="file-img"><img class="proof-icon" src="/img/Document.png" alt="doc-icon" onclick="showModal()"></td>
+                            <td class="file-img"><img class="proof-icon" src="/img/Document.png" alt="doc-icon" onclick="showModal(<?= $i ?>)"></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
@@ -41,8 +41,9 @@
     </div>
 </main>
 <?= $this->include('layout/footer'); ?>
+<?php $j = 0 ?>
 <?php foreach ($kredit as $k) : ?>
-    <div id="img-modal" onclick="closeModal()">
+    <div class="img-modal" onclick="closeModal(<?= $j++ ?>)">
         <img class="proof-img" src="/img/<?= $k['Bukti'] ?>" alt="">
     </div>
 <?php endforeach ?>

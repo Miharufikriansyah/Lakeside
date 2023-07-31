@@ -22,19 +22,7 @@ class Total extends BaseController
     public function index()
     {
         $currentPageDebit = $this->request->getVar('page_debit') ? $this->request->getVar('page_debit') : 1;
-        $dataDebit = [
-            'debit' => $this->debitModel->paginate(3, 'debit'),
-            'pager' => $this->debitModel->pager,
-            'currentPage' => $currentPageDebit,
-        ];
-
         $currentPageKredit = $this->request->getVar('page_kredit') ? $this->request->getVar('page_kredit') : 1;
-        $dataKredit = [
-            'kredit' => $this->kreditModel->paginate(3, 'debit'),
-            'pager' => $this->kreditModel->pager,
-            'currentPage' => $currentPageKredit,
-        ];
-
         // Ambil nilai total debit dan total kredit dari model
         $totalDebitResult = $this->debitModel->totalDebit();
         $totalKreditResult = $this->kreditModel->totalKredit();
@@ -45,7 +33,16 @@ class Total extends BaseController
 
         // Hitung total
         $total = $totalDebit - $totalKredit;
+        $data = [
+            'debit' => $this->debitModel->paginate(3, 'debit'),
+            'pager' => $this->debitModel->pager,
+            'currentPage' => $currentPageDebit,
+            'kredit' => $this->kreditModel->paginate(3, 'debit'),
+            'pager' => $this->kreditModel->pager,
+            'currentPage' => $currentPageKredit,
+            'total' => $total
+        ];
 
-        return view('total/total', $dataDebit, $dataKredit, $total);
+        return view('total/total', $data);
     }
 }
