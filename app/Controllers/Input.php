@@ -30,37 +30,47 @@ class Input extends BaseController
 
     public function SaveDebit()
     {
-        if ($this->validate([
+        $rules = [
+            'Jumlah' => 'required',
+            'date' => 'required',
+            'keterangan' => 'required',
+            'PJ' => 'required',
+        ];
+
+        $errors = [
             'Jumlah' => [
-                'rules' => 'required',
-                'errors' => 'Jumlah Tidak Boleh kosong',
+                'required' => 'Jumlah Tidak Boleh kosong',
             ],
             'date' => [
-                'rules' => 'required',
-                'errors' => 'Tanggal Tidak Boleh kosong',
+                'required' => 'Tanggal Tidak Boleh kosong',
             ],
             'keterangan' => [
-                'rules' => 'required',
-                'errors' => 'Keterangan Tidak Boleh kosong',
+                'required' => 'Keterangan Tidak Boleh kosong',
             ],
             'PJ' => [
-                'rules' => 'required',
-                'errors' => 'PJ Tidak Boleh kosong',
+                'required' => 'PJ Tidak Boleh kosong',
             ],
-        ])) {
-            $validation = \Config\Services::validation();
-            return redirect()->to('Input/Debit')->withInput()->with('validation', $validation);
+        ];
+
+        if (!$this->validate($rules, $errors)) {
+            // Jika validasi gagal, kembali ke halaman input dengan data yang diisi sebelumnya dan pesan validasi
+            return redirect()->to('Input/Debit')->withInput();
         }
 
-        $this->debitModel->save([
+        $data = [
             'Jumlah' => $this->request->getVar('Jumlah'),
             'Tanggal' => $this->request->getVar('date'),
             'Keterangan' => $this->request->getVar('keterangan') ?? '',
             'PJ' => $this->request->getVar('PJ'),
-        ]);
-        Session()->setFlashdata('Pesan', 'Data Telah Diinput');
+        ];
+
+        // Simpan data ke database menggunakan model
+        $this->debitModel->save($data);
+
+        Session()->setFlashdata('Pesan', 'Sukses');
         return redirect()->to('Input/Debit');
     }
+
 
     public function Kredit()
     {
