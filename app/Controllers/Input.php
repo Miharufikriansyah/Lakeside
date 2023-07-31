@@ -67,7 +67,7 @@ class Input extends BaseController
         // Simpan data ke database menggunakan model
         $this->debitModel->save($data);
 
-        Session()->setFlashdata('Pesan', 'Sukses');
+        Session()->setFlashdata('Pesan', 'Data Telah Diinput');
         return redirect()->to('Input/Debit');
     }
 
