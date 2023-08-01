@@ -11,20 +11,13 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $i = 1  + (6 * ($currentPage - 1)) ?>
+                <?php $i = 1 + (6 * ($currentPage_debit - 1)) ?>
                 <?php foreach ($debit as $d) : ?>
                     <tr>
                         <td class="data">
                             <p class="amount"><?= $d['Jumlah'] ?></p>
                             <p class="desc"><?= $d['Keterangan'] ?></p>
                             <p class="data-date"><?= $d['Tanggal'] ?></p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="data">
-                            <p class="amount">Rp.10.000</p>
-                            <p class="desc">Sirup ABC</p>
-                            <p class="data-date">05/01/2023</p>
                         </td>
                     </tr>
                 <?php endforeach; ?>
@@ -37,7 +30,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $i = 1  + (6 * ($currentPage - 1)) ?>
+                <?php $i = 1 + (6 * ($currentPage_kredit - 1)) ?>
                 <?php foreach ($kredit as $k) : ?>
                     <tr>
                         <td class="data">
@@ -51,7 +44,7 @@
         </table>
     </div>
     <div class="page-container">
-        <?= $pager->links('debit', 'history_pagination') ?>
+        <?= $pager_debit->links('debit', 'history_pagination') ?>
     </div>
     <h2 class="sub-title">Total Neraca</h4>
         <div class="neraca">

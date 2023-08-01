@@ -18,16 +18,25 @@ class DebitModel extends Model
 
     public function searchdebit($keyword)
     {
-        $builder = $this->table('kredit');
+        $builder = $this->table('debit');
         $builder->like('Tanggal', $keyword);
+        return $builder;
+    }
+    public function searchAlldebit($DataDebit)
+    {
+        $builder = $this->table('debit');
+        $builder->like('Jumlah', $DataDebit); // Cari nilai cocok di kolom 'Jumlah'
+        $builder->orLike('Tanggal', $DataDebit); // Cari nilai cocok di kolom 'Tanggal'
+        $builder->orLike('Keterangan', $DataDebit); // Cari nilai cocok di kolom 'Keterangan'
+        $builder->orLike('PJ', $DataDebit); // Cari nilai cocok di kolom 'PJ'
         return $builder;
     }
 
     public function totalDebit()
     {
-        $builder = $this->table('kredit');
-        $builder->selectSum('Jumlah');
-        $totaldebit = $builder->get();
-        return $totaldebit;
+        $builder = $this->db->table('debit');
+        $builder->selectSum('Jumlah', 'total_debit');
+        $totalDebitResult = $builder->get()->getRowArray();
+        return $totalDebitResult['total_debit'] ?? 0;
     }
 }

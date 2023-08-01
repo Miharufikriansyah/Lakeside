@@ -6,8 +6,8 @@
     <div class="history-container">
         <div class="search-container">
             <form action="" class="search">
-                <input type="search" placeholder="Semua Transaksi">
-                <input type="text" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                <input type="search" name="DataDebit" placeholder="Semua Transaksi">
+                <input type="text" name="keyword" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
                 <input type="submit" value="CARI" class="search-button">
             </form>
         </div>

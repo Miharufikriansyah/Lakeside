@@ -26,11 +26,22 @@ class KreditModel extends Model
         $builder->like('Tanggal', $keyword);
         return $builder;
     }
-    public function totalKredit()
+
+    public function searchAllKredit($AlldData)
     {
         $builder = $this->table('kredit');
-        $builder->selectSum('Jumlah');
-        $totalkredit = $builder->get();
-        return $totalkredit;
+        $builder->like('Jumlah', $AlldData); // Cari nilai cocok di kolom 'Jumlah'
+        $builder->orLike('Tanggal', $AlldData); // Cari nilai cocok di kolom 'Tanggal'
+        $builder->orLike('Keterangan', $AlldData); // Cari nilai cocok di kolom 'Keterangan'
+        $builder->orLike('PJ', $AlldData); // Cari nilai cocok di kolom 'PJ'
+        return $builder;
+    }
+
+    public function totalKredit()
+    {
+        $builder = $this->db->table('kredit');
+        $builder->selectSum('Jumlah', 'total_kredit');
+        $totalKreditResult = $builder->get()->getRowArray();
+        return $totalKreditResult['total_kredit'] ?? 0;
     }
 }

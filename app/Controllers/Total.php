@@ -21,28 +21,29 @@ class Total extends BaseController
 
     public function index()
     {
+        // Pagination untuk model Debit
         $currentPageDebit = $this->request->getVar('page_debit') ? $this->request->getVar('page_debit') : 1;
+        $data['debit'] = $this->debitModel->paginate(3, 'debit');
+        $data['pager_debit'] = $this->debitModel->pager;
+        $data['currentPage_debit'] = $currentPageDebit;
+
+        // Pagination untuk model Kredit
         $currentPageKredit = $this->request->getVar('page_kredit') ? $this->request->getVar('page_kredit') : 1;
+        $data['kredit'] = $this->kreditModel->paginate(3, 'kredit');
+        $data['pager_kredit'] = $this->kreditModel->pager;
+        $data['currentPage_kredit'] = $currentPageKredit;
+
         // Ambil nilai total debit dan total kredit dari model
         $totalDebitResult = $this->debitModel->totalDebit();
         $totalKreditResult = $this->kreditModel->totalKredit();
 
         // Ambil nilai total debit dan total kredit sebagai angka
-        $totalDebit = $totalDebitResult->total_debit ?? 0;
-        $totalKredit = $totalKreditResult->total_kredit ?? 0;
+        $totalDebit = $totalDebitResult->total_debit;
+        $totalKredit = $totalKreditResult->total_kredit;
 
         // Hitung total
-        $total = $totalDebit - $totalKredit;
-        $data = [
-            'debit' => $this->debitModel->paginate(3, 'debit'),
-            'pager' => $this->debitModel->pager,
-            'currentPage' => $currentPageDebit,
-            'kredit' => $this->kreditModel->paginate(3, 'debit'),
-            'pager' => $this->kreditModel->pager,
-            'currentPage' => $currentPageKredit,
-            'total' => $total
-        ];
-
+        $data['total'] = $totalDebit - $totalKredit;
+        dd($totalDebit, $totalKredit);
         return view('total/total', $data);
     }
 }
