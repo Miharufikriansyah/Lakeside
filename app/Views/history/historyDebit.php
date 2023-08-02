@@ -6,9 +6,12 @@
     <div class="history-container">
         <div class="search-container">
             <form action="" class="search">
-                <input type="search" name="DataDebit" placeholder="Cari Transaksi">
-                <input type="text" name="keyword" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
+                <input type="search" name="transaksi" placeholder="Cari Transaksi">
+                <input type="text" name="tgl" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
                 <input type="submit" value="CARI" class="search-button">
+                <?php if ($transaksi || $tgl) : ?>
+                    <a href="History/Debit" class="clear"><button><i class="fa fa-times fa-xl"></i></button></a>
+                <?php endif ?>
             </form>
         </div>
         <div class="table-container">

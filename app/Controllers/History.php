@@ -18,8 +18,8 @@ class History extends BaseController
         $currentPage = $this->request->getVar('page_debit') ? $this->request->getVar('page_debit') : 1;
         $debitModel = new DebitModel();
         // $debit = $debitModel->getDebit();
-        $DataDebit = $this->request->getVar('DataDebit');
-        $keyword = $this->request->getVar('keyword');
+        $DataDebit = $this->request->getVar('transaksi');
+        $keyword = $this->request->getVar('tgl');
 
         if ($DataDebit) {
             // Jika ada keyword, gunakan method searchAllkredit pada model
@@ -39,7 +39,9 @@ class History extends BaseController
         $data = [
             'debit' => $debit->paginate(7, 'debit'),
             'pager' => $debit->pager,
-            'currentPage' => $currentPage
+            'currentPage' => $currentPage,
+            'transaksi' => $DataDebit,
+            'tgl' => $keyword
         ];
         // return view('/history/historyDebit', ['data' => $debit]);
         return view('/history/historyDebit', $data);
@@ -49,8 +51,8 @@ class History extends BaseController
     {
         $currentPage = $this->request->getVar('page_debit') ? $this->request->getVar('page_debit') : 1;
         $kreditModel = new KreditModel();
-        $dataKredit = $this->request->getVar('dataKredit');
-        $keyword = $this->request->getVar('keyword');
+        $dataKredit = $this->request->getVar('transaksi');
+        $keyword = $this->request->getVar('tgl');
 
         if ($dataKredit) {
             // Jika ada dataKredit$dataKredit, gunakan method searchkredit pada model
