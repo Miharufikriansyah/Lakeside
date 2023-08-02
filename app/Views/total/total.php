@@ -15,7 +15,7 @@
                 <?php foreach ($debit as $d) : ?>
                     <tr>
                         <td class="data">
-                            <p class="amount"><?= $d['Jumlah'] ?></p>
+                            <p class="amount"><?= "Rp." . $d['Jumlah'] ?></p>
                             <p class="desc"><?= $d['Keterangan'] ?></p>
                             <p class="data-date"><?= $d['Tanggal'] ?></p>
                         </td>
@@ -34,7 +34,7 @@
                 <?php foreach ($kredit as $k) : ?>
                     <tr>
                         <td class="data">
-                            <p class="amount"><?= $k['Jumlah'] ?></p>
+                            <p class="amount"><?= "Rp." . $k['Jumlah'] ?></p>
                             <p class="desc"><?= $k['Keterangan'] ?></p>
                             <p class="data-date"><?= $k['Tanggal'] ?></p>
                         </td>
@@ -51,7 +51,7 @@
             <div class="neraca-header">
                 <h3>Neraca</h3>
             </div>
-            <p class="total-neraca"><?= $total ?></p>
+            <p class="total-neraca"><?= "Rp." . $total ?></p>
         </div>
 </main>
 <?= $this->include('layout/footer'); ?>

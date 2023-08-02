@@ -2,11 +2,11 @@
 
 <?= $this->section('content'); ?>
 <main>
-    <h2 class="sub-title">History</h2>
+    <h2 class="sub-title">History Debit</h2>
     <div class="history-container">
         <div class="search-container">
             <form action="" class="search">
-                <input type="search" name="DataDebit" placeholder="Semua Transaksi">
+                <input type="search" name="DataDebit" placeholder="Cari Transaksi">
                 <input type="text" name="keyword" placeholder="Pilih Tanggal Transaksi" id="date" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'">
                 <input type="submit" value="CARI" class="search-button">
             </form>
@@ -27,7 +27,7 @@
                     <?php foreach ($debit as $d) : ?>
                         <tr>
                             <th><?= $i++ ?></th>
-                            <td><?= $d['Jumlah'] ?></td>
+                            <td><?= "Rp." . $d['Jumlah'] ?></td>
                             <td><?= $d['Tanggal'] ?></td>
                             <td><?= $d['Keterangan'] ?></td>
                             <td><?= $d['PJ'] ?></td>
@@ -42,4 +42,5 @@
     </div>
 </main>
 <?= $this->include('layout/footer'); ?>
+<script src="/js/date.js"></script>
 <?= $this->endSection(); ?>

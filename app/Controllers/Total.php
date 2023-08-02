@@ -38,12 +38,12 @@ class Total extends BaseController
         $totalKreditResult = $this->kreditModel->totalKredit();
 
         // Ambil nilai total debit dan total kredit sebagai angka
-        $totalDebit = $totalDebitResult->total_debit;
-        $totalKredit = $totalKreditResult->total_kredit;
+        // $totalDebit = $totalDebitResult->total_debit;
+        // $totalKredit = $totalKreditResult->total_kredit;
 
         // Hitung total
-        $data['total'] = $totalDebit - $totalKredit;
-        dd($totalDebit, $totalKredit);
+        $data['total'] = $totalDebitResult - $totalKreditResult;
+        // dd($totalDebit, $totalKredit);
         return view('total/total', $data);
     }
 }

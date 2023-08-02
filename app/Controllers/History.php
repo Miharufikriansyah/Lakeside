@@ -23,22 +23,22 @@ class History extends BaseController
 
         if ($DataDebit) {
             // Jika ada keyword, gunakan method searchAllkredit pada model
-            $tanggaldebit = $debitModel->searchAlldebit($DataDebit);
+            $debit = $debitModel->searchAlldebit($DataDebit);
         } else {
             // Jika tidak ada keyword, ambil semua data dari model
-            $tanggaldebit = $debitModel->findAll();
+            $debit = $debitModel;
         }
         if ($keyword) {
             // Jika ada keyword, gunakan method searchkredit pada model
-            $tanggaldebit = $debitModel->searchdebit($keyword);
+            $debit = $debitModel->searchdebit($keyword);
         } else {
             // Jika tidak ada keyword, ambil semua data dari model
-            $tanggaldebit = $debitModel->findAll();
+            $debit = $debitModel;
         }
 
         $data = [
-            'debit' => $debitModel->paginate(7, 'debit'),
-            'pager' => $debitModel->pager,
+            'debit' => $debit->paginate(7, 'debit'),
+            'pager' => $debit->pager,
             'currentPage' => $currentPage
         ];
         // return view('/history/historyDebit', ['data' => $debit]);
@@ -54,21 +54,21 @@ class History extends BaseController
 
         if ($dataKredit) {
             // Jika ada dataKredit$dataKredit, gunakan method searchkredit pada model
-            $tanggalkredit = $kreditModel->searchAllKredit($dataKredit);
+            $kredit = $kreditModel->searchAllKredit($dataKredit);
         } else {
             // Jika tidak ada dataKredit$dataKredit, ambil semua data dari model
-            $tanggalkredit = $kreditModel->findAll();
+            $kredit = $kreditModel;
         }
         if ($keyword) {
             // Jika ada keyword, gunakan method searchkredit pada model
-            $tanggalkredit = $kreditModel->searchkredit($keyword);
+            $kredit = $kreditModel->searchkredit($keyword);
         } else {
             // Jika tidak ada keyword, ambil semua data dari model
-            $tanggalkredit = $kreditModel->findAll();
+            $kredit = $kreditModel;
         }
         $data = [
-            'kredit' => $kreditModel->paginate(7, 'debit'),
-            'pager' => $kreditModel->pager,
+            'kredit' => $kredit->paginate(7, 'debit'),
+            'pager' => $kredit->pager,
             'currentPage' => $currentPage
         ];
 
