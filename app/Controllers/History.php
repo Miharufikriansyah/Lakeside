@@ -71,7 +71,9 @@ class History extends BaseController
         $data = [
             'kredit' => $kredit->paginate(7, 'debit'),
             'pager' => $kredit->pager,
-            'currentPage' => $currentPage
+            'currentPage' => $currentPage,
+            'transaksi' => $dataKredit,
+            'tgl' => $keyword
         ];
 
         return view('/history/historyKredit', $data);
