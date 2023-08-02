@@ -11,7 +11,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $i = 1  + (6 * ($currentPage - 1)) ?>
+                <?php $i = 1 + (6 * ($currentPage_debit - 1)) ?>
                 <?php foreach ($debit as $d) : ?>
                     <tr>
                         <td class="data">
@@ -30,7 +30,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $i = 1  + (6 * ($currentPage - 1)) ?>
+                <?php $i = 1 + (6 * ($currentPage_kredit - 1)) ?>
                 <?php foreach ($kredit as $k) : ?>
                     <tr>
                         <td class="data">
@@ -44,7 +44,7 @@
         </table>
     </div>
     <div class="page-container">
-        <?= $pager->links('debit', 'history_pagination') ?>
+        <?= $pager_debit->links('debit', 'history_pagination') ?>
     </div>
     <h2 class="sub-title">Total Neraca</h4>
         <div class="neraca">
