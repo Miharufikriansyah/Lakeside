@@ -15,7 +15,7 @@
             </form>
         </div>
         <div class="table-container">
-            <table class="history">
+            <table class="table">
                 <thead>
                     <tr>
                         <th>No</th>

@@ -32,7 +32,7 @@ header {
 
 .page-title {
   color: #fff;
-  font-size: 25px;
+  font-size: 20px;
   font-weight: 700;
   margin-right: 10px;
 }
@@ -161,7 +161,7 @@ main {
 
 .sub-title {
   color: #5c3c1d;
-  font-size: 30px;
+  font-size: 24px;
   margin-top: 10px;
   margin-left: 20px;
 }
@@ -430,18 +430,17 @@ option {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-left: 20px;
-  padding-right: 20px;
   overflow-x: auto;
+  width: 100%;
 }
 
-.history {
+.table {
   border-collapse: collapse;
   width: 100%;
   border-spacing: 20px;
 }
 
-.history thead th {
+.table thead th {
   background-color: #73522d;
   opacity: 0.800000011920929;
   color: #fff;
@@ -450,7 +449,7 @@ option {
   border: 1px solid #c5af85;
 }
 
-.history tbody th,
+.table tbody th,
 .file-img {
   text-align: center;
   font-weight: 400;
@@ -461,10 +460,10 @@ option {
   cursor: pointer;
 }
 
-.history tbody tr th,
-.history tbody tr td {
+.table tbody tr th,
+.table tbody tr td {
   border-bottom: 1px solid #c5af85;
-  padding: 20px 4px;
+  padding: 4px 4px;
   color: #5c3c1d;
 }
 
@@ -549,15 +548,6 @@ option {
   gap: 10px;
 }
 
-.neraca {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 20px;
-  flex-direction: column;
-  gap: 8px;
-}
-
 .cashflow {
   width: 100%;
   border-spacing: 20px 2px;
@@ -592,23 +582,13 @@ option {
   color: #999;
 }
 
-.neraca-header {
-  color: #fff;
-  opacity: 0.800000011920929;
-  background: #73522d;
-  width: 100%;
-  text-align: center;
-}
-
-.neraca-header h3 {
-  font-weight: 400;
-}
-
 .total-neraca {
-  border-bottom: 1px solid #8e7354;
-  width: 100%;
-  text-align: center;
-  padding-bottom: 20px;
+  margin-left: 20px;
+  font-size: 18px;
+}
+
+.total-neraca span {
+  font-weight: 700;
 }
 
 /* Animation */
@@ -748,6 +728,15 @@ option {
     font-size: 20px;
   }
 
+  .sub-title {
+    font-size: 20px;
+    margin-left: 12px;
+  }
+
+  .box-title {
+    font-size: 20px;
+  }
+
   /* Hamburger Menu */
   .hamburger-menu {
     display: block;
@@ -779,16 +768,16 @@ option {
 
   .nav-section {
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     align-content: center;
   }
 
   .navbar-title {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .nav-link {
-    width: 90%;
+    width: 100%;
     margin-right: 10px;
   }
 
@@ -797,11 +786,11 @@ option {
   }
 
   .button-text {
-    font-size: 16px;
+    font-size: 12px;
   }
 
   .logo {
-    width: 179px;
+    width: 156px;
   }
 
   #card-icon {
@@ -825,6 +814,10 @@ option {
     font-size: 25px;
   }
 
+  .form-label {
+    font-size: 16px;
+  }
+
   /* History */
   .table-container {
     justify-content: flex-start;
@@ -840,10 +833,6 @@ option {
   .img-opt {
     width: 125px;
     height: 115px;
-  }
-
-  .box-title {
-    font-size: 25px;
   }
 
   /* input */

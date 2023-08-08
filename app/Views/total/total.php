@@ -3,56 +3,36 @@
 <?= $this->section('content'); ?>
 <main>
     <h2 class="sub-title">Cashflow</h2>
+    <p class="total-neraca">Total Neraca : <span><?= "Rp." . $total ?></span></p>
     <div class="cashflow-container">
-        <table class="cashflow">
-            <thead>
-                <tr>
-                    <th>Debit</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $i = 1 + (6 * ($currentPage_debit - 1)) ?>
-                <?php foreach ($debit as $d) : ?>
+        <div class="table-container">
+            <table class="table">
+                <thead>
                     <tr>
-                        <td class="data">
-                            <p class="amount"><?= "Rp." . $d['Jumlah'] ?></p>
-                            <p class="desc"><?= $d['Keterangan'] ?></p>
-                            <p class="data-date"><?= $d['Tanggal'] ?></p>
-                        </td>
+                        <th>No</th>
+                        <th>Tanggal</th>
+                        <th>Debit</th>
+                        <th>Kredit</th>
+                        <th>Keterangan</th>
+                        <th>Penanggung Jawab</th>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-        <table class="cashflow">
-            <thead>
-                <tr>
-                    <th>Kredit</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php $i = 1 + (6 * ($currentPage_kredit - 1)) ?>
-                <?php foreach ($kredit as $k) : ?>
+                </thead>
+                <tbody>
                     <tr>
-                        <td class="data">
-                            <p class="amount"><?= "Rp." . $k['Jumlah'] ?></p>
-                            <p class="desc"><?= $k['Keterangan'] ?></p>
-                            <p class="data-date"><?= $k['Tanggal'] ?></p>
-                        </td>
+                        <th>1</th>
+                        <td>12-08-2023</td>
+                        <td>Rp.10000</td>
+                        <td></td>
+                        <td>Kopi Susu</td>
+                        <td>Jonat</td>
                     </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
     <div class="page-container">
         <?= $pager_debit->links('debit', 'history_pagination') ?>
     </div>
-    <h2 class="sub-title">Total Neraca</h4>
-        <div class="neraca">
-            <div class="neraca-header">
-                <h3>Neraca</h3>
-            </div>
-            <p class="total-neraca"><?= "Rp." . $total ?></p>
-        </div>
 </main>
 <?= $this->include('layout/footer'); ?>
 <?= $this->endSection(); ?>
