@@ -1,9 +1,13 @@
+<!-- Header Template -->
 <?= $this->extend('layout/template'); ?>
 
+
+<!-- Main Start -->
 <?= $this->section('content'); ?>
 <main>
     <h2 class="sub-title">History Debit</h2>
     <div class="history-container">
+        <!-- Search Section -->
         <div class="search-container">
             <form action="" class="search">
                 <input type="search" name="transaksi" placeholder="Cari Transaksi">
@@ -13,8 +17,11 @@
                     <a href="History/Debit" class="clear"><button><i class="fa fa-times fa-xl"></i></button></a>
                 <?php endif ?>
             </form>
+            <!-- To Input Button -->
             <a href="/Input/Debit" class="input-button"><button>INPUT</button></a>
         </div>
+
+        <!-- Table Debit -->
         <div class="table-container">
             <table class="table">
                 <thead>
@@ -40,11 +47,18 @@
                 </tbody>
             </table>
         </div>
+
+        <!-- Pager -->
         <div class="page-container">
             <?= $pager->links('debit', 'history_pagination') ?>
         </div>
     </div>
 </main>
+<!-- Main End -->
+
+<!-- Footer Template -->
 <?= $this->include('layout/footer'); ?>
+
+<!-- JS Script -->
 <script src="/js/date.js"></script>
 <?= $this->endSection(); ?>

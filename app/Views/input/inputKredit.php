@@ -1,5 +1,7 @@
+<!-- Header Template -->
 <?= $this->extend('layout/template'); ?>
 
+<!-- Main Start -->
 <?= $this->section('content'); ?>
 <main>
     <h2 class="sub-title">INPUT KREDIT</h2>
@@ -28,7 +30,12 @@
         <img src="/img/kredit-sketch.png" alt="Sketch Debit" class="sketch-img">
     </div>
 </main>
+<!-- Main End -->
+
+<!-- Footer Template Start -->
 <?= $this->include('layout/footer'); ?>
+
+<!-- Succes Alert Message -->
 <?php if (session()->getFlashdata('Pesan')) : ?>
     <div class="alert-modal" onclick="closeAlert()" style="display: flex;">
         <div class="alert-box">
@@ -37,6 +44,8 @@
         </div>
     </div>
 <?php endif ?>
+
+<!-- JS Script -->
 <script src="/js/date.js"></script>
 <script src="/js/input.js"></script>
 <script src="/js/success.js"></script>

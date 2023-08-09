@@ -1,9 +1,11 @@
 <div class="navbar">
+    <!-- Hamburger Toogle Button -->
     <div class="hamburger-toggle"><i class="fa fa-bars"></i></div>
     <!-- logo lakeside -->
     <a href="/">
         <img class="logo" src="/img/logo.png" alt="lakeside logo">
     </a>
+    <!-- Nav Sidebar -->
     <nav>
         <p class="navbar-title">History</p>
         <div class="nav-section">

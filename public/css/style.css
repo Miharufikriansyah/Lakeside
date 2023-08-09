@@ -168,7 +168,7 @@ main {
 
 .box-title {
   color: #5c3c1d;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 /* Input */
@@ -427,47 +427,6 @@ option {
   background-color: #ba905a;
 }
 
-.table-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: auto;
-  width: 100%;
-}
-
-.table {
-  border-collapse: collapse;
-  width: 100%;
-  border-spacing: 20px;
-}
-
-.table thead th {
-  background-color: #73522d;
-  opacity: 0.800000011920929;
-  color: #fff;
-  font-weight: 400;
-  padding: 12px;
-  border: 1px solid #c5af85;
-}
-
-.table tbody th,
-.file-img {
-  text-align: center;
-  font-weight: 400;
-}
-
-.proof-icon {
-  text-align: center;
-  cursor: pointer;
-}
-
-.table tbody tr th,
-.table tbody tr td {
-  border-bottom: 1px solid #c5af85;
-  padding: 4px 4px;
-  color: #5c3c1d;
-}
-
 .img-modal {
   display: none;
   justify-content: center;
@@ -546,11 +505,10 @@ option {
   background-color: #c5af85;
   color: #fff;
   text-align: center;
-  height: 100%;
+  height: 30px;
   border: none;
   font-size: 16px;
   font-family: "Lexend";
-  border-radius: 50px;
   cursor: pointer;
 }
 /* total */
@@ -603,6 +561,48 @@ option {
 
 .total-neraca span {
   font-weight: 700;
+}
+
+/* Table Style */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: auto;
+  width: 100%;
+}
+
+.table {
+  border-collapse: collapse;
+  width: 100%;
+  border-spacing: 20px;
+}
+
+.table thead th {
+  background-color: #73522d;
+  opacity: 0.800000011920929;
+  color: #fff;
+  font-weight: 400;
+  padding: 12px;
+  border: 1px solid #c5af85;
+}
+
+.table tbody th,
+.file-img {
+  text-align: center;
+  font-weight: 400;
+}
+
+.proof-icon {
+  text-align: center;
+  cursor: pointer;
+}
+
+.table tbody tr th,
+.table tbody tr td {
+  border-bottom: 1px solid #c5af85;
+  padding: 4px 4px;
+  color: #5c3c1d;
 }
 
 /* Animation */
@@ -708,6 +708,10 @@ option {
     width: 256px;
   }
 
+  .search-container {
+    flex-direction: column;
+  }
+
   /* total */
   .cashflow-container {
     flex-direction: column;
@@ -749,6 +753,10 @@ option {
 
   .box-title {
     font-size: 20px;
+  }
+
+  .option {
+    gap: 10px;
   }
 
   /* Hamburger Menu */
@@ -800,7 +808,7 @@ option {
   }
 
   .button-text {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   .logo {
@@ -841,12 +849,12 @@ option {
 /* Mobile S */
 @media (max-width: 360px) {
   .opt-box {
-    width: 150px;
+    width: 120px;
   }
 
   .img-opt {
-    width: 125px;
-    height: 115px;
+    width: 110px;
+    height: 110px;
   }
 
   /* input */

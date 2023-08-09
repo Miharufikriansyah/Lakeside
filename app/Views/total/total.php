@@ -1,10 +1,15 @@
+<!-- Header Template -->
 <?= $this->extend('layout/template'); ?>
 
+
+<!-- Main Start -->
 <?= $this->section('content'); ?>
 <main>
     <h2 class="sub-title">Cashflow</h2>
     <p class="total-neraca">Total Neraca : <span><?= "Rp." . $total ?></span></p>
     <div class="cashflow-container">
+
+        <!-- Cashflow Table -->
         <div class="table-container">
             <table class="table">
                 <thead>
@@ -30,9 +35,14 @@
             </table>
         </div>
     </div>
+
+    <!-- Pager -->
     <div class="page-container">
         <?= $pager_debit->links('debit', 'history_pagination') ?>
     </div>
 </main>
+<!-- Main End -->
+
+<!--Footer Template -->
 <?= $this->include('layout/footer'); ?>
 <?= $this->endSection(); ?>

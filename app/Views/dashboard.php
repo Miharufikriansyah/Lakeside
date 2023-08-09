@@ -1,5 +1,7 @@
+<!-- Header Template -->
 <?= $this->extend('layout/template'); ?>
 
+<!-- Main Start -->
 <?= $this->section('content'); ?>
 <main>
     <div class="container">
@@ -20,7 +22,9 @@
         </div>
     </div>
 </main>
+<!-- Main End -->
 
+<!-- Footer Template -->
 <?= $this->include('layout/footer'); ?>
 
 <?= $this->endSection(); ?>
