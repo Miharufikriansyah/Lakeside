@@ -13,6 +13,7 @@
                     <a href="History/Debit" class="clear"><button><i class="fa fa-times fa-xl"></i></button></a>
                 <?php endif ?>
             </form>
+            <a href="/Input/Debit" class="input-button"><button>INPUT</button></a>
         </div>
         <div class="table-container">
             <table class="table">

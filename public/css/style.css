@@ -333,6 +333,7 @@ option {
   box-sizing: border-box;
   padding-left: 20px;
   display: flex;
+  gap: 15px;
 }
 
 .search {
@@ -537,6 +538,19 @@ option {
 
 .clear button i {
   color: #b4b4b4;
+  cursor: pointer;
+}
+
+.input-button > button {
+  width: 100px;
+  background-color: #c5af85;
+  color: #fff;
+  text-align: center;
+  height: 100%;
+  border: none;
+  font-size: 16px;
+  font-family: "Lexend";
+  border-radius: 50px;
   cursor: pointer;
 }
 /* total */
