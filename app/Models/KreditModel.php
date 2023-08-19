@@ -9,7 +9,7 @@ class KreditModel extends Model
     protected $table = "kredit";
     protected $primaryKey = 'id_kredit';
     protected $useTimestamps = true;
-    protected $allowedFields = ['Jumlah', 'Tanggal', 'Keterangan', 'PJ', 'Bukti'];
+    protected $allowedFields = ['Jumlah_kredit', 'Tanggal', 'Keterangan', 'PJ', 'Bukti'];
 
     public function getKredit()
     {
@@ -30,7 +30,7 @@ class KreditModel extends Model
     public function searchAllKredit($AlldData)
     {
         $builder = $this->table('kredit');
-        $builder->like('Jumlah', $AlldData); // Cari nilai cocok di kolom 'Jumlah'
+        $builder->like('Jumlah_kredit', $AlldData); // Cari nilai cocok di kolom 'Jumlah'
         $builder->orLike('Tanggal', $AlldData); // Cari nilai cocok di kolom 'Tanggal'
         $builder->orLike('Keterangan', $AlldData); // Cari nilai cocok di kolom 'Keterangan'
         $builder->orLike('PJ', $AlldData); // Cari nilai cocok di kolom 'PJ'
@@ -39,9 +39,6 @@ class KreditModel extends Model
 
     public function totalKredit()
     {
-        $builder = $this->db->table('kredit');
-        $builder->selectSum('Jumlah', 'total_kredit');
-        $totalKreditResult = $builder->get()->getRowArray();
-        return $totalKreditResult['total_kredit'] ?? 0;
+        return $this->selectSum('Jumlah_kredit', 'total_kredit')->get()->getRow();
     }
 }

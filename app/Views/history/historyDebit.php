@@ -38,7 +38,7 @@
                     <?php foreach ($debit as $d) : ?>
                         <tr>
                             <th><?= $i++ ?></th>
-                            <td><?= "Rp." . $d['Jumlah'] ?></td>
+                            <td><?= "Rp." . $d['Jumlah_debit'] ?></td>
                             <td><?= $d['Tanggal'] ?></td>
                             <td><?= $d['Keterangan'] ?></td>
                             <td><?= $d['PJ'] ?></td>

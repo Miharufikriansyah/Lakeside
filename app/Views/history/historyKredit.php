@@ -37,7 +37,7 @@
                     <?php foreach ($kredit as $k) : ?>
                         <tr>
                             <th><?= $i++ ?></th>
-                            <td><?= "Rp." . $k['Jumlah'] ?></td>
+                            <td><?= "Rp." . $k['Jumlah_kredit'] ?></td>
                             <td><?= $k['Tanggal'] ?></td>
                             <td><?= $k['Keterangan'] ?></td>
                             <td><?= $k['PJ'] ?></td>
