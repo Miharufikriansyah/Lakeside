@@ -1,7 +1,6 @@
 <!-- Header Template -->
 <?= $this->extend('layout/template'); ?>
 
-
 <!-- Main Start -->
 <?= $this->section('content'); ?>
 <main>
@@ -23,14 +22,19 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <th>1</th>
-                        <td>12-08-2023</td>
-                        <td>Rp.10000</td>
-                        <td></td>
-                        <td>Kopi Susu</td>
-                        <td>Jonat</td>
-                    </tr>
+                    <?php
+                    $i = 1 + (7 * ($currentPage - 1)); // Menghitung nomor urut dengan pagination
+                    foreach ($records as $row) :
+                    ?>
+                        <tr>
+                            <td><?= $i++ ?></td> <!-- Increment nomor urut -->
+                            <td><?= $row['Tanggal'] ?></td>
+                            <td><?= isset($row['Jumlah_debit']) ? "Rp." . $row['Jumlah_debit'] : '' ?></td>
+                            <td><?= isset($row['Jumlah_kredit']) ? "Rp." . $row['Jumlah_kredit'] : '' ?></td>
+                            <td><?= $row['Keterangan'] ?></td>
+                            <td><?= $row['PJ'] ?></td>
+                        </tr>
+                    <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
@@ -38,11 +42,11 @@
 
     <!-- Pager -->
     <div class="page-container">
-        <?= $pager_debit->links('debit', 'history_pagination') ?>
+        <?= $pager->links('joined_data', 'history_pagination') ?>
     </div>
 </main>
 <!-- Main End -->
 
-<!--Footer Template -->
+<!-- Footer Template -->
 <?= $this->include('layout/footer'); ?>
 <?= $this->endSection(); ?>

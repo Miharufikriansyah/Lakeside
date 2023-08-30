@@ -9,7 +9,7 @@ class DebitModel extends Model
     protected $table = "debit";
     protected $primaryKey = 'id_debit';
     protected $useTimestamps = true;
-    protected $allowedFields = ['Jumlah', 'Tanggal', 'Keterangan', 'PJ'];
+    protected $allowedFields = ['Jumlah_debit', 'Tanggal', 'Keterangan', 'PJ'];
 
     public function getDebit()
     {
@@ -25,7 +25,7 @@ class DebitModel extends Model
     public function searchAlldebit($DataDebit)
     {
         $builder = $this->table('debit');
-        $builder->like('Jumlah', $DataDebit); // Cari nilai cocok di kolom 'Jumlah'
+        $builder->like('Jumlah_debit', $DataDebit); // Cari nilai cocok di kolom 'Jumlah'
         $builder->orLike('Tanggal', $DataDebit); // Cari nilai cocok di kolom 'Tanggal'
         $builder->orLike('Keterangan', $DataDebit); // Cari nilai cocok di kolom 'Keterangan'
         $builder->orLike('PJ', $DataDebit); // Cari nilai cocok di kolom 'PJ'
@@ -34,9 +34,6 @@ class DebitModel extends Model
 
     public function totalDebit()
     {
-        $builder = $this->db->table('debit');
-        $builder->selectSum('Jumlah', 'total_debit');
-        $totalDebitResult = $builder->get()->getRowArray();
-        return $totalDebitResult['total_debit'] ?? 0;
+        return $this->selectSum('Jumlah_debit', 'total_debit')->get()->getRow();
     }
 }

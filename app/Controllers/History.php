@@ -49,7 +49,7 @@ class History extends BaseController
 
     public function Kredit()
     {
-        $currentPage = $this->request->getVar('page_debit') ? $this->request->getVar('page_debit') : 1;
+        $currentPage = $this->request->getVar('page_kredit') ? $this->request->getVar('page_kredit') : 1;
         $kreditModel = new KreditModel();
         $dataKredit = $this->request->getVar('transaksi');
         $keyword = $this->request->getVar('tgl');
@@ -69,7 +69,7 @@ class History extends BaseController
             $kredit = $kreditModel;
         }
         $data = [
-            'kredit' => $kredit->paginate(7, 'debit'),
+            'kredit' => $kredit->paginate(7, 'kredit'),
             'pager' => $kredit->pager,
             'currentPage' => $currentPage,
             'transaksi' => $dataKredit,

@@ -58,7 +58,7 @@ class Input extends BaseController
         }
 
         $data = [
-            'Jumlah' => $this->request->getVar('Jumlah'),
+            'Jumlah_debit' => $this->request->getVar('Jumlah'),
             'Tanggal' => $this->request->getVar('date'),
             'Keterangan' => $this->request->getVar('keterangan') ?? '',
             'PJ' => $this->request->getVar('PJ'),
@@ -123,10 +123,10 @@ class Input extends BaseController
 
             // Upload to database
             $this->kreditModel->save([
-                'Jumlah' => $this->request->getVar('Jumlah') ?? 0,
+                'Jumlah_kredit' => $this->request->getVar('Jumlah') ?? 0,
                 'Tanggal' => $this->request->getVar('date'),
                 'Keterangan' => $this->request->getVar('keterangan') ?? '',
-                'Penanggung Jawab' => $this->request->getVar('PJ'),
+                'PJ' => $this->request->getVar('PJ'),
                 'Bukti' => $namebukti,
             ]);
 
