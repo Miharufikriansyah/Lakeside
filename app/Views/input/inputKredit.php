@@ -14,11 +14,7 @@
             <label class="form-label">Keterangan</label>
             <textarea name="keterangan" id="keterangan" cols="30" rows="5" placeholder="Masukkan Nama Pesanan"></textarea>
             <label class="form-label">Penanggung Jawab</label>
-            <select name="PJ" id="pj">
-                <option value="default">--PILIH--</option>
-                <option value="barista">Barista</option>
-                <option value="kasir">Kasir</option>
-            </select>
+            <input type="text" for="PJ" id="pj">
             <label class="form-label">Upload Bukti</label>
             <label for="proof" class="file-container">
                 <input type="file" name="bukti" class="proof-input" id="proof">

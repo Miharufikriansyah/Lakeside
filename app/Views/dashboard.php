@@ -5,7 +5,7 @@
 <?= $this->section('content'); ?>
 <main>
     <div class="container">
-        <h2 class="sub-title">INPUT</h2>
+        <h2 class="sub-title">History</h2>
         <div class="option">
             <div class="opt-box">
                 <a href="/History/Debit" class="opt-link">

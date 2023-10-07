@@ -22,7 +22,7 @@
                 </button>
             </a>
         </div>
-        <p class="navbar-title">Total</p>
+        <p class="navbar-title">Cashflow</p>
         <div class="nav-section">
             <a href="/Total" class="nav-link">
                 <button class="navbar-button">
